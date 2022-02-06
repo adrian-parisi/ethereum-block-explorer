@@ -1,3 +1,3 @@
 module.exports = {
-  BLOCKS_PER_PAGE: 2,
+  BLOCKS_PER_PAGE: 25,
 };

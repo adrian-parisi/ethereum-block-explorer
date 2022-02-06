@@ -1,4 +1,5 @@
 const moment = require('moment');
+const ethers = require('ethers');
 const { getBlocks } = require('./client')
 
 $(document).ready(async function () {
@@ -26,6 +27,10 @@ function displayDashboard(blocks) {
     addColumn(tr, moment.unix(block.timestamp).fromNow());
     addColumn(tr, block.transactions.length);
     addColumn(tr, block.miner);
+    addColumn(tr, Number.parseInt(block.gasUsed.hex));
+    addColumn(tr, Number.parseInt(block.gasLimit.hex));
+    const baseFeePerGasInWei = Number.parseInt(block.baseFeePerGas.hex)
+    addColumn(tr, ethers.utils.formatUnits(baseFeePerGasInWei, 'gwei'));
     tableBody.append(tr);
   });
 
