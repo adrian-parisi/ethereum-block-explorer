@@ -5,9 +5,8 @@ $(document).ready(async function () {
     const address = $("#address").val();
     if (address) {
       const { balance, isEOA } = await getAddressDetails(address);
-      console.log(balance);
       $("#balance-block").show();
-      $("#balance-amount").text(balance + " ETH");
+      $("#balance-amount").text(Number.parseFloat(balance).toFixed(4) + " ETH");
       $("#is-eoa").text(isEOA);
     }
   });
