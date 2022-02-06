@@ -38,6 +38,15 @@ class BlockchainClient {
     return balance;
   }
 
+  static async isEOA(address) {
+    console.log(`Checking if address ${address} is EOA`);
+    const code = await provider.getCode(address);
+    console.log("code: ", code);
+    const isEOA = code === '0x';
+    console.log(`Is address ${address} EOA? ${isEOA}`);
+    return isEOA;
+  }
+
 }
 
 module.exports = BlockchainClient;

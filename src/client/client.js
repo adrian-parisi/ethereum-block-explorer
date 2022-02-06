@@ -9,8 +9,8 @@ async function getBlocks() {
   });
 }
 
-async function getBalance(address) {
-  const request = new Request(`${server}/balance/${address}`, { method: 'GET' });
+async function getAddressDetails(address) {
+  const request = new Request(`${server}/address/${address}`, { method: 'GET' });
   return fetch(request).then(response => {
     return response.json();
   });
@@ -18,5 +18,5 @@ async function getBalance(address) {
 
 module.exports = {
   getBlocks,
-  getBalance,
+  getAddressDetails,
 };

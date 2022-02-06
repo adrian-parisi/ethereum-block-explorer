@@ -18,15 +18,16 @@ app.get('/blocks', async (req, res) => {
   res.send({ blocks });
 });
 
-app.get('/balance/:address', async (req, res) => {
+app.get('/address/:address', async (req, res) => {
   let { address } = req.params;
   let balance = 0.0;
   try {
     balance = await BlockchainClient.getBalance(address);
+    isEOA = await BlockchainClient.isEOA(address);
   } catch {
-    console.log(`Failed to retrieve balance from address ${address}`);
+    console.log(`Failed to retrieve details from address ${address}`);
   }
-  res.send({ balance });
+  res.send({ balance, isEOA });
 
 });
 
