@@ -5,7 +5,7 @@ require('dotenv').config();
 const url = process.env.NODE_URL;
 const provider = new ethers.providers.JsonRpcProvider(url);
 
-class Blockchain {
+class BlockchainClient {
 
   static async getLatestBlocks() {
     const latestBlockNum = await provider.getBlockNumber();
@@ -31,9 +31,11 @@ class Blockchain {
   }
 
   static async getBalance(address) {
-    return provider.getBalance(address);
+    const balanceBigInt = await provider.getBalance(address);
+    const balance = ethers.utils.formatEther(balanceBigInt);
+    return balance;
   }
 
 }
 
-module.exports = Blockchain
+module.exports = BlockchainClient

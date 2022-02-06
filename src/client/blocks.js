@@ -1,15 +1,21 @@
-const Blockchain = require('../server/controller');
 const moment = require('moment');
 
+const server = "http://localhost:3000";
 
 $(document).ready(async function () {
-  const blocks = await Blockchain.getLatestBlocks();
-  console.log(blocks);
-  displayDashboard(blocks);
+  const request = new Request(`${server}/blocks`, { method: 'GET' });
+
+  fetch(request).then(response => {
+    return response.json();
+
+  }).then(({ blocks }) => {
+    console.log(blocks);
+    displayDashboard(blocks);
+  });
+
 });
 
 function displayDashboard(blocks) {
-  window.blocks = blocks;
   const tableBody = $("#blocks-table-body");
 
   const addColumn = ((tr, value) => {

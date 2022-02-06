@@ -6,47 +6,33 @@
   <title>Ethereum Block Explorer</title>
   <link rel="stylesheet" href="https://unpkg.com/papercss@1.8.3/dist/paper.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="module" src="app.js"></script>
+  <script type="module" src="address.js"></script>
 </head>
 
 <body>
 
-  <nav class="border fixed split-nav">
-    <div class="nav-brand">
-      <h3><a href="#">Get PaperCSS</a></h3>
-    </div>
-    <div class="collapsible">
-      <input id="collapsible1" type="checkbox" name="collapsible1">
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-      <div class="collapsible-body">
-        <ul class="inline">
-          <li><a href="#">Blockchain</a></li>
-          <li><a href="#">Address</a></li>
-          <li><a href="#">Github</a></li>
-        </ul>
+  <div class="paper container margin-bottom-large">
+    <nav class="border fixed split-nav">
+      <div class="nav-brand">
+        <h3><a href="index.html">Ethereum Blockchain Explorer</a></h3>
       </div>
-    </div>
-  </nav>
-
-  <table id="blocks-table">
-    <thead>
-      <tr>
-        <th>Block</th>
-        <th>Age</th>
-        <th>Txn</th>
-        <th>Miner</th>
-        <!--<th>Gas Used</th>
-        <th>Gas Limit</th>
-        <th>Base Fee</th>
-        <th>Reward</th> -->
-      </tr>
-    </thead>
-    <tbody id="blocks-table-body"></tbody>
-  </table>
+      <div class="collapsible">
+        <input id="collapsible1" type="checkbox" name="collapsible1">
+        <label for="collapsible1">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+        </label>
+        <div class="collapsible-body">
+          <ul class="inline">
+            <li><a href="index.html">Blockchain</a></li>
+            <li><a href="address.html">Address</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="paper container margin-bottom-large">
+  </div>
 </body>
 
 </html>
