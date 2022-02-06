@@ -10,8 +10,7 @@
 </head>
 
 <body>
-
-  <div class="paper container margin-bottom-large">
+  <div class="section container margin-bottom-large">
     <nav class="border fixed split-nav">
       <div class="nav-brand">
         <h3><a href="index.html">Ethereum Blockchain Explorer</a></h3>
@@ -31,8 +30,25 @@
       </div>
     </nav>
   </div>
-  <div class="paper container margin-bottom-large">
+  <div class="paper container">
+    <div class="form-group">
+      <div class="row">
+        <div class="col md-12">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input id="address" class="input-block" type="text">
+          </div>
+          <div class="col-5">
+            <button id="btn-check-balance" class="btn-block">Check Balance</button>
+          </div>
+        </div>
+        <div id="balance-block" style="display:none">
+          <h3>Your balance is: <span id="balance-amount" class="badge success"></span></h3>
+        </div>
+      </div>
+    </div>
   </div>
+
 </body>
 
 </html>

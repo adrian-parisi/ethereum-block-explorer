@@ -1,21 +1,14 @@
 const moment = require('moment');
-
-const server = "http://localhost:3000";
+const { getBlocks } = require('./client')
 
 $(document).ready(async function () {
-  const request = new Request(`${server}/blocks`, { method: 'GET' });
-
-  fetch(request).then(response => {
-    return response.json();
-
-  }).then(({ blocks }) => {
-    console.log(blocks);
-    displayDashboard(blocks);
-  });
-
+  let { blocks } = await getBlocks();
+  console.log(blocks);
+  displayDashboard(blocks);
 });
 
 function displayDashboard(blocks) {
+  window.blocks = blocks;
   const tableBody = $("#blocks-table-body");
 
   const addColumn = ((tr, value) => {

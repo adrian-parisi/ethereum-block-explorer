@@ -31,11 +31,13 @@ class BlockchainClient {
   }
 
   static async getBalance(address) {
+    console.log(`Checking balance from address ${address}`);
     const balanceBigInt = await provider.getBalance(address);
     const balance = ethers.utils.formatEther(balanceBigInt);
+    console.log(`Balance from address ${address} is ${balance}`);
     return balance;
   }
 
 }
 
-module.exports = BlockchainClient
+module.exports = BlockchainClient;
