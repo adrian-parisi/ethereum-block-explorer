@@ -1,0 +1,113 @@
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+.block-list {
+  background-color: #fff;
+}
+
+table {
+  width: 100%;
+}
+
+th, td {
+  font-weight: unset;
+  padding-right: 10px;
+}
+
+.column1 {
+  width: 33%;
+  padding-left: 40px;
+}
+
+.column2 {
+  width: 13%;
+}
+
+.column3 {
+  width: 22%;
+}
+
+.column4 {
+  width: 19%;
+}
+
+.column5 {
+  width: 13%;
+}
+
+.block-list-head th {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.block-list-body td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+/*==================================================================
+[ Fix header ]*/
+.block-list {
+  position: relative;
+  padding-top: 60px;
+}
+
+.block-list-head {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.block-list-body {
+  max-height: 585px;
+  overflow: auto;
+}
+
+
+
+/*==================================================================
+[ Ver1 ]*/
+
+.block-list th {
+  font-family: Lato-Bold;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.4;
+
+  background-color: #6c7ae0;
+}
+
+.block-list td {
+  font-family: Lato-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.4;
+}
+
+.block-list .block-list-body tr:nth-child(even) {
+  background-color: #f8f6ff;
+}
+
+/*---------------------------------------------*/
+
+.block-list {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+
+.block-list .ps__rail-y {
+  right: 5px;
+}
+
+.block-list .ps__rail-y::before {
+  background-color: #ebebeb;
+}
+
+.block-list .ps__rail-y .ps__thumb-y::before {
+  background-color: #cccccc;
+}
